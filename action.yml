@@ -1,50 +1,12 @@
 name: Ultimate Portfolio Maker
 author: Kaustubh Gupta  
-description: Creates an webpage which can be deployed as Github page
+description: Updating contrib logs
 inputs:
   gh_token:
     description: "Github Personal Access token"
     required: True
-  theme:
-    description: "Type of webpage you want to render"
-    required: False
-    default: 1
-  blogs:
-    description: "Include blogs in your Portfolio"
-    required: False
-    default: False
-  hackathons:
-    description: "Include hackathon projects."
-    required: False
-    default: False
-  stats_choice: 
-    description: "Type of GitHub Stats"
-    required: False
-    default: 1
-  social_links:
-    description: "Linkedin, Twitter, Stackoverflow, Medium, Devto"
-    required: False
-    default: False
-  resume_link:
-    description: "Link for resume pdf uploaded online"
-    required: False
-    default: False
-  allow_footer:
-    description: "Display Creator Credits"
-    required: False
-    default: True
 runs:
   using: docker
   image: Dockerfile
   args:
     - ${{ inputs.gh_token }}
-    - ${{ inputs.theme }}
-    - ${{ inputs.blogs }}
-    - ${{ inputs.hackathons }}
-    - ${{ inputs.stats_choice }}
-    - ${{ inputs.social_links }}
-    - ${{ inputs.resume_link }}
-    - ${{ inputs.allow_footer }}
-branding:
-  icon: "award"
-  color: "green"
